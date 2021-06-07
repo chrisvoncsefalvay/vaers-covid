@@ -1,0 +1,178 @@
+% !TEX TS-program = xelatex
+%
+% Created by Chris on 2020-07-19.
+% Copyright (c) Chris von Csefalvay, 2020.
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{polyglossia}
+\usepackage{hyperref}
+
+% Bibliography styling
+\usepackage[super,square,sort&compress,numbers]{natbib}
+\bibliographystyle{unsrtnat}
+\usepackage{url}
+\urlstyle{same}
+
+% Language and hyphenation
+% \usepackage[english]{babel}
+\usepackage[htt]{hyphenat}
+
+% Graphics
+\usepackage{graphicx}
+
+\hypersetup
+{
+  pdftitle   = {Early evidence for the safety of certain COVID-19 vaccines using empirical Bayesian modeling from VAERS},
+  pdfauthor  = {Chris von Csefalvay}
+}
+
+\title{Early evidence for the safety of certain COVID-19 vaccines using  empirical Bayesian modeling from VAERS}
+\author{Chris von Csefalvay\thanks{Starschema Inc., Arlington, VA. Correspondence: \texttt{csefalvayk@starschema.net}.}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    The novel coronavirus SARS-CoV-2 has rapidly emerged as a significant threat to global public health, in particular because -- as is not uncommon with novel pathogens -- there is no effective pharmaceutical treatment or prophylaxis to the viral syndrome it causes. In the absence of such specific treatment modalities, the mainstay of public health response rests on non-pharmaceutical interventions (NPIs), such as social distancing. This paper contributes to the understanding of social distancing against SARS-CoV-2 by quantitatively analysing the statistical dynamics of disease propagation as a differential game, and estimating the relative costs of distancing versus not distancing, identifying marginal utility of distancing based on known population epidemiological data about SARS-CoV-2 and concluding that unless the costs of distancing vastly exceed the cost of illness per unit time, social distancing remains a dominant strategy. These findings can assist in solidly anchoring public health responses based on social distancing within a quantitative framework attesting to their effectiveness.
+\end{abstract}
+
+\section{Introduction} % (fold)
+\label{sec:introduction}
+
+% section introduction (end)
+
+\section{Methods} % (fold)
+\label{sec:methods}
+
+\subsection{Data set} % (fold)
+\label{sub:data_set}
+
+Data for this study was obtained from VAERS on 06 June, 2021. At the time of retrieval, the data set included reports received on or before 28 May, 2021. Data was retrieved using the CDC bulk download site.
+
+% subsection data_set (end)
+
+\subsection{Processing} % (fold)
+\label{sub:processing}
+
+% subsection processing (end)
+
+Data was processed using R 4.1.0\cite{rstats}. Upon import, data was destructured from VAERS's multi-event schema, where multiple putative AEFIs are included in a single line, to a single-event schema using \texttt{reshape2}.\cite{wickham2012reshape2} 
+
+% section methods (end)
+
+\subsection{Metrics} % (fold)
+\label{sub:metrics}
+
+One of the most widely used metrics to identify possible safety signals is the Proportional Reporting Ratio (PRR).\cite{evans2001use} For the $m \times n$ matrix $D$ of $m$ adverse events and $n$ drugs, where $D_{i,j}$ ($i \in m$, $j \in n$), the PRR of side effect $i$ in the presence of the drug $j$ is defined as
+
+$$
+   PRR_{i,j} = \frac{D_{i,j}}{D_{i,\star}} \cdot \frac{D_{\neg i, \star}}{D_{\neg i, j}}
+$$
+
+The PRR commends itself by relative mathematical simplicity and ease of implementation, but is subject to a disproportional reporting bias. In other words, the PRR does not indicate whether a certain side effect is more or less frequent compared to another, or with another drug. In particular, it does not reflect relative risk. It often eludes even trained professionals that the correct interpretation of $PRR_{i,j}$ is not the relative probability that a certain adverse effect will be reported with this particular drug compared with the reference drugs. Thus, a $PRR_{anaphylaxis,j}$ of 3.0 does not indicate that anaphylaxis is three times more likely with $j$ than any other drug. instead, it indicates that the probability of reporting anaphylaxis rather than any other event with $j$ is three times higher than the probability of reporting anaphylaxis rather than any other event with other drugs.\cite{moore2003biases}
+
+A better indicator of possible safety signals is the empirical Bayesian geometric mean (EBGM) or modified DuMouchel's method.\cite{dumouchel1999bayesian} Since its first publication in 1999, this method has been widely used in analysing 'market basket' type problems – that is, identifying combinations of elements on each axis that occur with unusual frequency, where a Bayesian baseline is calculated through an expectation prior.\cite{almenoff2003disproportionality,harpaz2013empirical,lee2020safety} 
+
+The EBGM approach builds on the relative reporting ratio $R_{rep}$ (occasionally also $RR$), defined as $\frac{N_{i,j}}{E_{i,j}}$, where $N{i,j}$ is the actual number of reported instances of the adverse effect $i$ given the drug $j$. One would thus expect a value of $1.0$ if no association existed, i.e. if rows and columns were independent from each other. Higher values would thus increasingly militate away from the null hypothesis and towards an association between $i$ and $j$.
+
+One of the deficiencies of the $R_{rep}$ metric is that for low-expectancy low-occurrence issues, a single integer occurrence (which may well be entirely accidental) may, in the face of a small real valued expectancy value, result in a misleadingly high $R_{rep}$ (e.g. $E_{i,j} = 0.05$, $N_{i,j} = 1$ yields an $R_{rep}$ of $\frac{1}{0.05} = 20$.) DuMouchel's work expands on this by using a Poisson likelihood for actual counts, in which $N_{i,j} = Poisson(\mu_{i,j})$.\cite{dumouchel1999bayesian} This affords us the ability to calculate the metric
+
+$$ \lambda_{i,j} = \frac{\mu_{i,j}}{E_{i,j}}$$
+
+for a prior on $\lambda_{i,j}$ being drawn from a mixture of two gamma distributions. The posterior distribution of $\lambda_{i,j}$, specifically, is the mixture of two gamma distributions parametrised by the shape and scale variables
+
+
+\begin{align*}
+	\alpha = \alpha_1 + n \\
+	\beta = \beta_1 + E
+\end{align*}
+
+and 
+
+\begin{align*}
+	\alpha = \alpha_2 + n \\
+	\beta = \beta_2 + E
+\end{align*}
+
+
+with the parameter $Q_{N_{i,j}}$ being the mixture fraction (i.e. the likelihood that $\lambda_{i,j}$ was drawn from the first gamma distribution of the posterior). Consequently, the posterior of $\lambda$ is a probabilistic-Bayesian representation of $R_{rep}$ (and thus amenable to similar canons of interpretation), but with more stable results for low-expectancy low-occurrence events.
+
+% subsection metrics (end)
+
+\subsection{Computation} % (fold)
+\label{sub:computation}
+
+Computation was carried out using the \texttt{openEBGM}\cite{canida2017openebgm} package under R 4.1.0.\cite{rstats} Data was stratified by gender (male, female and unknown) and age group. Age groups were aggregated into four bins: <25, 25-44, 45-64 and over 65 years of age. The Cartesian product of the two stratum variables yielded 15 strata.
+
+For the estimation of hyperparameter vector $\theta = (\alpha_1, \beta_1, \alpha_2, \beta_2, Q)$, the non-linear Newton minimisation function \texttt{stats::nlm} was used, with initialisation weights of $\alpha_1 = 0.2$, $\beta_1 = 0.1$, $\alpha_2 = 2.0$, $\beta_2 = 4.0$ and $Q = 0.333$. 
+
+The computation was carried out in two separate runs. First, the data was examined over vaccine types (VAERS variable \texttt{VAX\_TYPE}), e.g. \texttt{FLU3} for all trivalent influenza vaccines and \texttt{COVID19} for all COVID-19 vaccines. Then, the same methodology, including fitting separate values for $\hat{\theta}$, was applied to the data over individual vaccines (VAERS variable \texttt{VAX\_NAME}). In both cases, the same stratification was used.
+
+In addition to the EBGM values, the mixture fraction $Q_n$ of the posterior probability distribution was estimated using the formula described by Eqn. 6 in DuMouchel (1999).\cite{dumouchel1999bayesian} Finally, the \texttt{quantBisect} function of the \texttt{openEBGM} package was used to estimate 5th and 95th percentiles, thereby providing a two-sided 10\% confidence margin. 
+
+% subsection computation (end)
+
+\section{Results} % (fold)
+\label{sec:results}
+
+\subsection{Absolute results} % (fold)
+\label{sub:absolute_results}
+
+The absolute results of the analysis shows COVID-19 vaccines as a group have a remarkably favourable safety profile. Of the 12,477 vaccine-symptom combinations for COVID-19 vaccines, only 24 had an EBGM mean value exceeding 2.0, commonly regarded as the lower bound for identifying a safety signal. Of the 24, 7 (29.17\%) are entries for tests conducted and/or normal results and 3 (12.5\%) are product- or administration-inherent reports (e.g. temperature excursion during product storage). Besides the generic entry for 'adverse drug reaction', the only identifiable clinical pictures recorded with an EBGM value exceeding 2.0 were deep vein thrombosis (DVT), gaze palsy, thrombosis and central venous sinus thrommbosis.
+
+The mean EBGM for COVID vaccines was 0.9936 ($\sigma$ = 0.1629), indicating a highly favourable safety profile. When analysed as a group, there were very few side effects even mildly above an EBGM of 1.00, indicating that the vaccine behaved as predicted. The proportionally highest proportional reported rate was a papular rash ($PRR =$ 8.55), while the largest absolute numbers of reports were non-specific symptoms that are common AEFIs and indicate immune activation. These include headaches (60,490 reports), pyrexia (49,459 reports) and chills (47,650 reports). Of 1,242,557 distinct reports of symptoms from COVID-19 vaccines during the examined period, only 3,769 involved death. It is important to note at this juncture that these reports are not verified, nor is causal attribution performed. The number of deaths (regardless of reporting confidence and lack of attribution) must be seen in the context of the fact that these reports arose from over 300 million doses of vaccination, putting the reporting likelihood at approx. one report of a death for every 79,500 doses administered.
+
+% subsection absolute_results (end)
+
+\subsection{Versus other vaccine types} % (fold)
+\label{sub:versus_other_vaccine_types}
+
+Compared to other vaccine categories, COVID-19 vaccines have the lowest mean EBGM, at almost exactly 1.00. There is a risk that the overall much higher number of vaccines administered, and as such the higher number of reports (during the period under examination, 1,252,858 distinct symptom reports were made, with 1,242,557, or 99.18\%, of these being for a COVID-19 vaccine) presents some distortion, enhancing the central tendency of data on the COVID-19 vaccine. Nonetheless, Table~\ref{tab:comparison_ebgm} provides a convincing comparison that attests to the safety of the COVID-19 vaccines vis-a-vis other vaccine types.
+
+\begin{table}[]
+\begin{tabular}{llll}
+Vaccine category                        & VAERS type code & Mean EBGM & Standard deviation of EBGM \\
+COVID-19                                & \texttt{COVID19}         & 1.0000    & 0.0000                     \\
+Influenza, trivalent, non-adjuvanted    & \texttt{FLU3}            & 1.1489    & 0.1678                     \\
+Influenza, quadrivalent, non-adjuvanted & \texttt{FLU4}            & 1.5686    & 2.4235                     \\
+Hepatitis B                             & \texttt{HEPAB}           & 1.4450    & 0.0071                     \\
+HPV, quadrivalent                       & \texttt{HPV4}            & 1.6735    & 1.5137                     \\
+HPV, nonavalent                         & \texttt{HPV9}            & 1.4454    & 1.1111                     \\
+MMR                                     & \texttt{MMR}             & 1.7261    & 2.2000                     \\
+TDaP                                    & \texttt{TDAP}            & 1.2723    & 0.7551                     \\
+Pneumococcal, 13-valent                 & \texttt{PNC13}           & 1.5822    & 1.6693                     \\
+Poliomyelitis, injectable               & \texttt{IPV}             & 1.2547    & 0.1817                    
+\end{tabular}
+\caption{Mean EBGM and standard deviation of COVID-19 vaccines }
+\label{tab:comparison_ebgm}
+\end{table}
+
+% subsection versus_other_vaccine_types (end)
+
+% section results (end)
+
+\section{Discussion} % (fold)
+\label{sec:discussion}
+
+As both Table~\ref{tab:comparison_ebgm}
+
+% section discussion (end)
+
+\section*{Competing interests} % (fold)
+\label{sec:competing_interests}
+
+The author declares no competing interests.
+
+% section competing_interests (end)
+
+\section*{Supplementary data} % (fold)
+\label{sec:supplementary_data}
+
+All simulations, code and data are available on Github and under the DOI XXXXXXX.
+
+% section supplementary_data (end)
+
+\bibliography{bibliography}
+
+\end{document}

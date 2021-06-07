@@ -1,0 +1,70 @@
+\begin{thebibliography}{9}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{R Core Team}(2021)]{rstats}
+{R Core Team}.
+\newblock \emph{R: A Language and Environment for Statistical Computing}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria, 2021.
+
+\bibitem[Wickham(2012)]{wickham2012reshape2}
+Hadley Wickham.
+\newblock reshape2: Flexibly reshape data: a reboot of the reshape package.
+\newblock \emph{R package version}, 1\penalty0 (2), 2012.
+
+\bibitem[Evans et~al.(2001)Evans, Waller, and Davis]{evans2001use}
+Stephen~JW Evans, Patrick~C Waller, and S~Davis.
+\newblock Use of proportional reporting ratios (prrs) for signal generation
+  from spontaneous adverse drug reaction reports.
+\newblock \emph{Pharmacoepidemiology and drug safety}, 10\penalty0
+  (6):\penalty0 483--486, 2001.
+
+\bibitem[Moore et~al.(2003)Moore, Hall, Sturkenboom, Mann, Lagnaoui, and
+  Begaud]{moore2003biases}
+Nicholas Moore, Gillian Hall, Miriam Sturkenboom, Ron Mann, Rajaa Lagnaoui, and
+  Bernard Begaud.
+\newblock Biases affecting the proportional reporting ratio (prr) in
+  spontaneous reports pharmacovigilance databases: the example of sertindole.
+\newblock \emph{Pharmacoepidemiology and drug safety}, 12\penalty0
+  (4):\penalty0 271--281, 2003.
+
+\bibitem[DuMouchel(1999)]{dumouchel1999bayesian}
+William DuMouchel.
+\newblock Bayesian data mining in large frequency tables, with an application
+  to the fda spontaneous reporting system.
+\newblock \emph{The American Statistician}, 53\penalty0 (3):\penalty0 177--190,
+  1999.
+
+\bibitem[Almenoff et~al.(2003)Almenoff, DuMouchel, Kindman, Yang, and
+  Fram]{almenoff2003disproportionality}
+June~S Almenoff, William DuMouchel, L~Allen Kindman, Xionghu Yang, and David
+  Fram.
+\newblock Disproportionality analysis using empirical bayes data mining: a tool
+  for the evaluation of drug interactions in the post-marketing setting.
+\newblock \emph{Pharmacoepidemiology and Drug Safety}, 12\penalty0
+  (6):\penalty0 517--521, 2003.
+
+\bibitem[Harpaz et~al.(2013)Harpaz, DuMouchel, LePendu, and
+  Shah]{harpaz2013empirical}
+Rave Harpaz, William DuMouchel, Paea LePendu, and Nigam~H Shah.
+\newblock Empirical bayes model to combine signals of adverse drug reactions.
+\newblock In \emph{Proceedings of the 19th ACM SIGKDD international conference
+  on Knowledge discovery and data mining}, pages 1339--1347, 2013.
+
+\bibitem[Lee et~al.(2020)Lee, Kim, Choe, and Shin]{lee2020safety}
+Hyesung Lee, Ju~Hwan Kim, Young~June Choe, and Ju-Young Shin.
+\newblock Safety surveillance of pneumococcal vaccine using three algorithms:
+  Disproportionality methods, empirical bayes geometric mean, and tree-based
+  scan statistic.
+\newblock \emph{Vaccines}, 8\penalty0 (2):\penalty0 242, 2020.
+
+\bibitem[Canida and Ihrie(2017)]{canida2017openebgm}
+Travis Canida and John Ihrie.
+\newblock openebgm: An r implementation of the gamma-poisson shrinker data
+  mining model.
+\newblock \emph{R J.}, 9\penalty0 (2):\penalty0 499, 2017.
+
+\end{thebibliography}
