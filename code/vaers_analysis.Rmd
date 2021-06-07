@@ -1,0 +1,46 @@
+---
+title: "VAERS analysis of COVID-19 vaccines"
+output: html_notebook
+---
+
+```{r}
+library(readr)
+library(magrittr)
+library(tidyverse)
+library(ggplot2)
+```
+
+
+```{r}
+X2021VAERSDATA <- read_csv("../data/2021VAERSDATA.csv", 
+    col_types = cols(RECVDATE = col_date(format = "%m/%d/%Y"), 
+        AGE_YRS = col_skip(), CAGE_MO = col_skip(), 
+        RPT_DATE = col_skip(), SYMPTOM_TEXT = col_skip(), 
+        DIED = col_skip(), DATEDIED = col_skip(), 
+        L_THREAT = col_skip(), ER_VISIT = col_skip(), 
+        HOSPITAL = col_skip(), HOSPDAYS = col_skip(), 
+        X_STAY = col_skip(), DISABLE = col_skip(), 
+        RECOVD = col_skip(), VAX_DATE = col_date(format = "%m/%d/%Y"), 
+        ONSET_DATE = col_skip(), NUMDAYS = col_skip(), 
+        LAB_DATA = col_skip(), V_ADMINBY = col_skip(), 
+        V_FUNDBY = col_skip(), OTHER_MEDS = col_skip(), 
+        CUR_ILL = col_skip(), HISTORY = col_skip(), 
+        PRIOR_VAX = col_skip(), SPLTTYPE = col_skip(), 
+        FORM_VERS = col_skip(), TODAYS_DATE = col_skip(), 
+        BIRTH_DEFECT = col_skip(), OFC_VISIT = col_skip(), 
+        ER_ED_VISIT = col_skip(), ALLERGIES = col_skip()))
+
+X2021VAERSSYMPTOMS <- read_csv("../data/2021VAERSSYMPTOMS.csv", 
+    col_types = cols(SYMPTOMVERSION1 = col_skip(), 
+        SYMPTOMVERSION2 = col_skip(), SYMPTOMVERSION3 = col_skip(), 
+        SYMPTOMVERSION4 = col_skip(), SYMPTOMVERSION5 = col_skip()))
+
+X2021VAERSVAX <- read_csv("../data/2021VAERSVAX.csv", 
+    col_types = cols(VAX_LOT = col_skip()))
+```
+
+```{r}
+
+df <- merge(X2021VAERSDATA, X2021VAERSVAX)
+
+```
