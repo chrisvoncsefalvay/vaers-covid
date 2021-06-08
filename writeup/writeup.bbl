@@ -1,9 +1,56 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{17}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bagcchi(2021)]{bagcchi2021world}
+Sanjeet Bagcchi.
+\newblock The world's largest covid-19 vaccination campaign.
+\newblock \emph{The Lancet. Infectious Diseases}, 21\penalty0 (3):\penalty0
+  323, 2021.
+
+\bibitem[Li et~al.(2021)Li, Tenchov, Smoot, Liu, Watkins, and
+  Zhou]{li2021comprehensive}
+Yingzhu Li, Rumiana Tenchov, Jeffrey Smoot, Cynthia Liu, Steven Watkins, and
+  Qiongqiong Zhou.
+\newblock A comprehensive review of the global efforts on covid-19 vaccine
+  development.
+\newblock \emph{ACS Central Science}, 7\penalty0 (4):\penalty0 512--533, 2021.
+
+\bibitem[Mathieu et~al.(2021)Mathieu, Ritchie, Ortiz-Ospina, Roser, Hasell,
+  Appel, Giattino, and Rod{\'e}s-Guirao]{mathieu2021global}
+Edouard Mathieu, Hannah Ritchie, Esteban Ortiz-Ospina, Max Roser, Joe Hasell,
+  Cameron Appel, Charlie Giattino, and Lucas Rod{\'e}s-Guirao.
+\newblock A global database of covid-19 vaccinations.
+\newblock \emph{Nature Human Behaviour}, pages 1--7, 2021.
+
+\bibitem[Khubchandani et~al.(2021)Khubchandani, Sharma, Price, Wiblishauser,
+  Sharma, and Webb]{khubchandani2021covid}
+Jagdish Khubchandani, Sushil Sharma, James~H Price, Michael~J Wiblishauser,
+  Manoj Sharma, and Fern~J Webb.
+\newblock Covid-19 vaccination hesitancy in the united states: a rapid national
+  assessment.
+\newblock \emph{Journal of Community Health}, 46\penalty0 (2):\penalty0
+  270--277, 2021.
+
+\bibitem[Peretti-Watel et~al.(2020)Peretti-Watel, Seror, Cortaredona, Launay,
+  Raude, Verger, Fressard, Beck, Legleye, l'Haridon, et~al.]{peretti2020future}
+Patrick Peretti-Watel, Val{\'e}rie Seror, S{\'e}bastien Cortaredona, Odile
+  Launay, Jocelyn Raude, Pierrea Verger, Lisa Fressard, Fran{\c{c}}ois Beck,
+  St{\'e}phane Legleye, Olivier l'Haridon, et~al.
+\newblock A future vaccination campaign against covid-19 at risk of vaccine
+  hesitancy and politicisation.
+\newblock \emph{The Lancet Infectious Diseases}, 20\penalty0 (7):\penalty0
+  769--770, 2020.
+
+\bibitem[Razai et~al.(2021)Razai, Chaudhry, Doerholt, Bauld, and
+  Majeed]{razai2021covid}
+Mohammad~S Razai, Umar~AR Chaudhry, Katja Doerholt, Linda Bauld, and Azeem
+  Majeed.
+\newblock Covid-19 vaccination hesitancy.
+\newblock \emph{bmj}, 373, 2021.
 
 \bibitem[{R Core Team}(2021)]{rstats}
 {R Core Team}.
@@ -66,5 +113,18 @@ Travis Canida and John Ihrie.
 \newblock openebgm: An r implementation of the gamma-poisson shrinker data
   mining model.
 \newblock \emph{R J.}, 9\penalty0 (2):\penalty0 499, 2017.
+
+\bibitem[Shimabukuro(2021)]{shimabukuro2021covid}
+Tom~T Shimabukuro.
+\newblock Covid-19 vaccine safety update.
+\newblock 2021.
+
+\bibitem[Welsh et~al.(2021)Welsh, Baumblatt, Chege, Goud, and
+  Nair]{welsh2021thrombocytopenia}
+Kerry~J Welsh, Jane Baumblatt, Wambui Chege, Ravi Goud, and Narayan Nair.
+\newblock Thrombocytopenia including immune thrombocytopenia after receipt of
+  mrna covid-19 vaccines reported to the vaccine adverse event reporting system
+  (vaers).
+\newblock \emph{Vaccine}, 39\penalty0 (25):\penalty0 3329--3332, 2021.
 
 \end{thebibliography}

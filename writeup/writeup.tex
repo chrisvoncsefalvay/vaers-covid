@@ -1,11 +1,13 @@
 % !TEX TS-program = xelatex
 %
-% Created by Chris on 2020-07-19.
-% Copyright (c) Chris von Csefalvay, 2020.
+% Created by Chris on 2021-06-07.
+% Copyright (c) Chris von Csefalvay, 2021s.
 \documentclass[12pt]{article}
 \usepackage{amsmath}
 \usepackage{polyglossia}
 \usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{pdfpages}
 
 % Bibliography styling
 \usepackage[super,square,sort&compress,numbers]{natbib}
@@ -34,11 +36,17 @@
 \maketitle
 
 \begin{abstract}
-    The novel coronavirus SARS-CoV-2 has rapidly emerged as a significant threat to global public health, in particular because -- as is not uncommon with novel pathogens -- there is no effective pharmaceutical treatment or prophylaxis to the viral syndrome it causes. In the absence of such specific treatment modalities, the mainstay of public health response rests on non-pharmaceutical interventions (NPIs), such as social distancing. This paper contributes to the understanding of social distancing against SARS-CoV-2 by quantitatively analysing the statistical dynamics of disease propagation as a differential game, and estimating the relative costs of distancing versus not distancing, identifying marginal utility of distancing based on known population epidemiological data about SARS-CoV-2 and concluding that unless the costs of distancing vastly exceed the cost of illness per unit time, social distancing remains a dominant strategy. These findings can assist in solidly anchoring public health responses based on social distancing within a quantitative framework attesting to their effectiveness.
+    The advent of vaccines against SARS-CoV-2 ushered in an unprecedented public health response, with the largest and most ambitious mass vaccination campaign in human history. The scale of this effort means that safety signals suggesting adverse effects may only be detectable using passive reporting. This paper examines reports to the CDC/FDA's VAERS system in the first six months of 2021, using an empirical Bayesian model with a gamma Poisson shrinker to estimate the risk of adverse effects posed by the COVID-19 vaccines currently on the U.S. market. Based on this preliminary data, it is concluded that the COVID-19 vaccine's safety significantly exceeds that of previously marketed vaccines, and other than a known risk of thrombotic events, no safety signals of concern emerge.
 \end{abstract}
 
 \section{Introduction} % (fold)
 \label{sec:introduction}
+
+The introduction of vaccines against SARS-CoV-2 has lent the response to the COVID-19 a new string in its bow. In the world's largest mass vaccination campaign to date, \cite{bagcchi2021world,li2021comprehensive,mathieu2021global} over two million doses of SARS-CoV-2 vaccines have been administered by the end of May 2021 – over 300 million of these just in the United States. As with any medical intervention, there are risks, and it is indispensible for public confidence that these risks be identified and corrected early. Adverse events following immunisation (AEFIs) have been documented in the context of every known vaccine. However, identifying particular safety signals is often difficult: the logistics of active surveillance within a pandemic are daunting at best, limiting us primarily to passive surveillance.
+
+In passive surveillance of AEFIs, persons who experience AEFIs volunteer this information. In the United States, the leading system for this purpose is VAERS, jointly maintained by the CDC and the FDA. Passive surveillance, however, suffers from both over- and underreporting: while some patients do not report their AEFIs (especially if these are mild and transient), many who report various ailments do so regardless of a determination of causality. VAERS was intentionally designed to be 'over-inclusive': anyone can submit reports, and there is no requirement for evidence to claim a particular AEFI. Moreover, the structure of VAERS allows for a wide range of information to be included as 'symptoms', including tests carried out and tests with normal results. Because of the sheer number of vaccines administered, even an exceedingly rare side effect may create a large enough number of affected patients. In order to address the growing concern of vaccine hesitancy,\cite{khubchandani2021covid,peretti2020future,razai2021covid} it is crucial to analyse and present AEFIs in the context of the overall number of vaccinations. Estimating risks using appropriate metrics and comparing it to can play a very significant role in dispelling misinformation and supporting evidence-based decision-making by patients and physicians alike.
+
+This paper focuses on the early evidence from the first six months of COVID-19 vaccination in the United States, from 1 January to 28 May 2021, and concludes that the safety record of the COVID-19 vaccines appears to be solid at this time based on the available evidence from VAERS. Using a Bayesian framework for isolating potential safety signals, data submitted to VAERS is compared to other vaccines during the same time period, concluding with an evaluation of the COVID-19 vaccines' overall safety.
 
 % section introduction (end)
 
@@ -119,9 +127,16 @@ In addition to the EBGM values, the mixture fraction $Q_n$ of the posterior prob
 \subsection{Absolute results} % (fold)
 \label{sub:absolute_results}
 
-The absolute results of the analysis shows COVID-19 vaccines as a group have a remarkably favourable safety profile. Of the 12,477 vaccine-symptom combinations for COVID-19 vaccines, only 24 had an EBGM mean value exceeding 2.0, commonly regarded as the lower bound for identifying a safety signal. Of the 24, 7 (29.17\%) are entries for tests conducted and/or normal results and 3 (12.5\%) are product- or administration-inherent reports (e.g. temperature excursion during product storage). Besides the generic entry for 'adverse drug reaction', the only identifiable clinical pictures recorded with an EBGM value exceeding 2.0 were deep vein thrombosis (DVT), gaze palsy, thrombosis and central venous sinus thrommbosis.
+The absolute results of the analysis shows COVID-19 vaccines as a group have a remarkably favourable safety profile. Of the 12,477 vaccine-symptom combinations for COVID-19 vaccines, only 24 had an EBGM mean value exceeding 2.0, commonly regarded as the lower bound for identifying a safety signal. Of the 24, 7 (29.17\%) are entries for tests conducted and/or normal results and 3 (12.5\%) are product- or administration-inherent reports (e.g. temperature excursion during product storage). Besides the generic entry for 'adverse drug reaction', the only identifiable clinical pictures recorded with an EBGM value exceeding 2.0 were deep vein thrombosis (DVT), gaze palsy, thrombosis and central venous sinus thrombosis.
 
 The mean EBGM for COVID vaccines was 0.9936 ($\sigma$ = 0.1629), indicating a highly favourable safety profile. When analysed as a group, there were very few side effects even mildly above an EBGM of 1.00, indicating that the vaccine behaved as predicted. The proportionally highest proportional reported rate was a papular rash ($PRR =$ 8.55), while the largest absolute numbers of reports were non-specific symptoms that are common AEFIs and indicate immune activation. These include headaches (60,490 reports), pyrexia (49,459 reports) and chills (47,650 reports). Of 1,242,557 distinct reports of symptoms from COVID-19 vaccines during the examined period, only 3,769 involved death. It is important to note at this juncture that these reports are not verified, nor is causal attribution performed. The number of deaths (regardless of reporting confidence and lack of attribution) must be seen in the context of the fact that these reports arose from over 300 million doses of vaccination, putting the reporting likelihood at approx. one report of a death for every 79,500 doses administered.
+
+\begin{figure}
+ \centering 
+ \includegraphics[scale=0.7]{vs_other_vax}
+ \caption{Comparison of EBGM values for the COVID-19 vaccine and a selection of vaccines in common clinical use within the United States}
+ \label{fig:vs_other_vax}
+\end{figure}
 
 % subsection absolute_results (end)
 
@@ -131,20 +146,30 @@ The mean EBGM for COVID vaccines was 0.9936 ($\sigma$ = 0.1629), indicating a hi
 Compared to other vaccine categories, COVID-19 vaccines have the lowest mean EBGM, at almost exactly 1.00. There is a risk that the overall much higher number of vaccines administered, and as such the higher number of reports (during the period under examination, 1,252,858 distinct symptom reports were made, with 1,242,557, or 99.18\%, of these being for a COVID-19 vaccine) presents some distortion, enhancing the central tendency of data on the COVID-19 vaccine. Nonetheless, Table~\ref{tab:comparison_ebgm} provides a convincing comparison that attests to the safety of the COVID-19 vaccines vis-a-vis other vaccine types.
 
 \begin{table}[]
-\begin{tabular}{llll}
-Vaccine category                        & VAERS type code & Mean EBGM & Standard deviation of EBGM \\
+\begin{tabular}{l  l  c  c}
+\textbf{Vaccine category}                        & \textbf{VAERS type code} & $\mathbf{\mu_{EBGM}}$ & $\mathbf{\sigma_{EBGM}}$ \\
+\hline
 COVID-19                                & \texttt{COVID19}         & 1.0000    & 0.0000                     \\
-Influenza, trivalent, non-adjuvanted    & \texttt{FLU3}            & 1.1489    & 0.1678                     \\
-Influenza, quadrivalent, non-adjuvanted & \texttt{FLU4}            & 1.5686    & 2.4235                     \\
+\hline
+Influenza, trivalent, \\ non-adjuvanted    & \texttt{FLU3}            & 1.1489    & 0.1678                     \\
+\hline
+Influenza, quadrivalent, \\ non-adjuvanted & \texttt{FLU4}            & 1.5686    & 2.4235                     \\
+\hline
 Hepatitis B                             & \texttt{HEPAB}           & 1.4450    & 0.0071                     \\
-HPV, quadrivalent                       & \texttt{HPV4}            & 1.6735    & 1.5137                     \\
-HPV, nonavalent                         & \texttt{HPV9}            & 1.4454    & 1.1111                     \\
+\hline
+HPV, \\ quadrivalent                       & \texttt{HPV4}            & 1.6735    & 1.5137                     \\
+\hline
+HPV, \\ nonavalent                         & \texttt{HPV9}            & 1.4454    & 1.1111                     \\
+\hline
 MMR                                     & \texttt{MMR}             & 1.7261    & 2.2000                     \\
+\hline
 TDaP                                    & \texttt{TDAP}            & 1.2723    & 0.7551                     \\
-Pneumococcal, 13-valent                 & \texttt{PNC13}           & 1.5822    & 1.6693                     \\
-Poliomyelitis, injectable               & \texttt{IPV}             & 1.2547    & 0.1817                    
+\hline
+Pneumococcal, \\ 13-valent                 & \texttt{PNC13}           & 1.5822    & 1.6693                     \\
+\hline
+Poliomyelitis, \\ injectable               & \texttt{IPV}             & 1.2547    & 0.1817                    
 \end{tabular}
-\caption{Mean EBGM and standard deviation of COVID-19 vaccines }
+\caption{Mean EBGM ($\mu_{EBGM}$) and standard deviation ($\sigma_{EBGM}$) of the COVID-19 vaccine and a selection of vaccines in common clinical use within the United States}
 \label{tab:comparison_ebgm}
 \end{table}
 
@@ -155,7 +180,11 @@ Poliomyelitis, injectable               & \texttt{IPV}             & 1.2547    &
 \section{Discussion} % (fold)
 \label{sec:discussion}
 
-As both Table~\ref{tab:comparison_ebgm}
+As both Table~\ref{tab:comparison_ebgm} and Figure~\ref{fig:vs_other_vax} indicate, the VAERS data between 01 January and 28 May 2021 shows a favourable side effect profile for the COVID-19 vaccine when compared to other commonly used vaccines.  
+
+From an analytical perspective, the disproportionate volume of COVID-19 vaccines when compared with all other vaccines poses a challenge. Typically, vaccines are administered to an age limited spectrum of the population – for instance, children typically receive their second TDaP vaccine between the ages of 4 and 6. Emergency vaccination campaigns that encompass the entire population may pose unique analytical problems. Thus, for instance, the number of reported instances of a certain AEFI may give a misleading indication of that AEFI's prevalence. The Bayesian approach underlying the EBGM algorithm, which uses informative priors and focuses on the relative difference in the posterior, controls for these discrepancies effectively.
+
+Based on reports between 01 January and 28 May 2021, the short to mid-term safety of COVID-19 vaccines appear to be firmly established. AEFIs appear primarily to be the typical concomitants of immune activation (arthralgia, pyrexia and non-specific malaise), with a potentially clinically significant but very rare indication of thrombotic events. The clinical experience so far appears to confirm this.\cite{shimabukuro2021covid,welsh2021thrombocytopenia} Long-term surveillance efforts will require more data, as it will certainly accrue over time, which may necessitate that these findings be confirmed.
 
 % section discussion (end)
 
@@ -165,13 +194,6 @@ As both Table~\ref{tab:comparison_ebgm}
 The author declares no competing interests.
 
 % section competing_interests (end)
-
-\section*{Supplementary data} % (fold)
-\label{sec:supplementary_data}
-
-All simulations, code and data are available on Github and under the DOI XXXXXXX.
-
-% section supplementary_data (end)
 
 \bibliography{bibliography}
 

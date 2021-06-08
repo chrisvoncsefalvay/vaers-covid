@@ -137,15 +137,3 @@ processed %>%
 
 ggsave("covid_vax.pdf")
 ```
-
-# Top 10 by EBGM for COVID vaccines
-
-## All vaccines
-
-```{r}
-
-
-tops_all_covid_vaccines <- processed %>% 
-  dplyr::filter(var1 %in% c(c("COVID19 (COVID19 (JANSSEN))", "COVID19 (COVID19 (MODERNA))", "COVID19 (COVID19 (PFIZER-BIONTECH))"))) %>%
-  arrange(desc(ebgm))
-```
