@@ -1,32 +1,111 @@
-%!TEX TS-program = xelatex
-%
-% Created by Chris on 2020-07-30.
-% Copyright (c) Chris von Csefalvay, 2020.
-\documentclass{article}
-\usepackage{amsmath}
-\usepackage{amsfonts}
+%  LaTeX support: latex@mdpi.com 
+%  For support, please attach all files needed for compiling as well as the log file, and specify your operating system, LaTeX version, and LaTeX editor.
 
+%=================================================================
+\documentclass[preprints,communication,submit,oneauthor,pdftex]{Definitions/mdpi} 
 
-% Bibliography styling
-\usepackage[super,square,sort&compress,numbers]{natbib}
-\bibliographystyle{unsrtnat}
-\usepackage{graphicx}
+% For posting an early version of this manuscript as a preprint, you may use "preprints" as the journal and change "submit" to "accept". The document class line would be, e.g., \documentclass[preprints,article,accept,moreauthors,pdftex]{mdpi}. This is especially recommended for submission to arXiv, where line numbers should be removed before posting. For preprints.org, the editorial staff will make this change immediately prior to posting.
 
-\title{Early evidence for the safety of certain COVID-19 vaccines using  empirical Bayesian modeling from VAERS}
-\author{Chris von Csefalvay\thanks{Starschema Inc., Arlington, VA. Correspondence: \texttt{csefalvayk@starschema.net}.}}
+%--------------------
+% Class Options:
+%--------------------
+%----------
+% journal
+%----------
+% Choose between the following MDPI journals:
+% acoustics, actuators, addictions, admsci, adolescents, aerospace, agriculture, agriengineering, agronomy, ai, algorithms, allergies, analytica, animals, antibiotics, antibodies, antioxidants, appliedchem, applmech, applmicrobiol, applnano, applsci, arts, asi, atmosphere, atoms, audiolres, automation, axioms, batteries, bdcc, behavsci, beverages, biochem, bioengineering, biologics, biology, biomechanics, biomedicines, biomedinformatics, biomimetics, biomolecules, biophysica, biosensors, biotech, birds, bloods, brainsci, buildings, businesses, cancers, carbon, cardiogenetics, catalysts, cells, ceramics, challenges, chemengineering, chemistry, chemosensors, chemproc, children, civileng, cleantechnol, climate, clinpract, clockssleep, cmd, coatings, colloids, compounds, computation, computers, condensedmatter, conservation, constrmater, cosmetics, crops, cryptography, crystals, curroncol, cyber, dairy, data, dentistry, dermato, dermatopathology, designs, diabetology, diagnostics, digital, disabilities, diseases, diversity, dna, drones, dynamics, earth, ebj, ecologies, econometrics, economies, education, ejihpe, electricity, electrochem, electronicmat, electronics, encyclopedia, endocrines, energies, eng, engproc, entropy, environments, environsciproc, epidemiologia, epigenomes, fermentation, fibers, fire, fishes, fluids, foods, forecasting, forensicsci, forests, fractalfract, fuels, futureinternet, futuretransp, futurepharmacol, futurephys, galaxies, games, gases, gastroent, gastrointestdisord, gels, genealogy, genes, geographies, geohazards, geomatics, geosciences, geotechnics, geriatrics, hazardousmatters, healthcare, hearts, hemato, heritage, highthroughput, histories, horticulturae, humanities, hydrogen, hydrology, hygiene, idr, ijerph, ijfs, ijgi, ijms, ijns, ijtm, ijtpp, immuno, informatics, information, infrastructures, inorganics, insects, instruments, inventions, iot, j, jcdd, jcm, jcp, jcs, jdb, jfb, jfmk, jimaging, jintelligence, jlpea, jmmp, jmp, jmse, jne, jnt, jof, joitmc, jor, journalmedia, jox, jpm, jrfm, jsan, jtaer, jzbg, kidney, land, languages, laws, life, liquids, literature, livers, logistics, lubricants, machines, macromol, magnetism, magnetochemistry, make, marinedrugs, materials, materproc, mathematics, mca, measurements, medicina, medicines, medsci, membranes, metabolites, metals, metrology, micro, microarrays, microbiolres, micromachines, microorganisms, minerals, mining, modelling, molbank, molecules, mps, mti, nanoenergyadv, nanomanufacturing, nanomaterials, ncrna, network, neuroglia, neurolint, neurosci, nitrogen, notspecified, nri, nursrep, nutrients, obesities, oceans, ohbm, onco, oncopathology, optics, oral, organics, osteology, oxygen, parasites, parasitologia, particles, pathogens, pathophysiology, pediatrrep, pharmaceuticals, pharmaceutics, pharmacy, philosophies, photochem, photonics, physchem, physics, physiolsci, plants, plasma, pollutants, polymers, polysaccharides, proceedings, processes, prosthesis, proteomes, psych, psychiatryint, publications, quantumrep, quaternary, qubs, radiation, reactions, recycling, regeneration, religions, remotesensing, reports, reprodmed, resources, risks, robotics, safety, sci, scipharm, sensors, separations, sexes, signals, sinusitis, smartcities, sna, societies, socsci, soilsystems, solids, sports, standards, stats, stresses, surfaces, surgeries, suschem, sustainability, symmetry, systems, taxonomy, technologies, telecom, textiles, thermo, tourismhosp, toxics, toxins, transplantology, traumas, tropicalmed, universe, urbansci, uro, vaccines, vehicles, vetsci, vibration, viruses, vision, water, wevj, women, world 
 
+%---------
+% article
+%---------
+% The default type of manuscript is "article", but can be replaced by: 
+% abstract, addendum, article, book, bookreview, briefreport, casereport, comment, commentary, communication, conferenceproceedings, correction, conferencereport, entry, expressionofconcern, extendedabstract, datadescriptor, editorial, essay, erratum, hypothesis, interestingimage, obituary, opinion, projectreport, reply, retraction, review, perspective, protocol, shortnote, studyprotocol, systematicreview, supfile, technicalnote, viewpoint, guidelines, registeredreport, tutorial
+% supfile = supplementary materials
+
+%----------
+% submit
+%----------
+% The class option "submit" will be changed to "accept" by the Editorial Office when the paper is accepted. This will only make changes to the frontpage (e.g., the logo of the journal will get visible), the headings, and the copyright information. Also, line numbering will be removed. Journal info and pagination for accepted papers will also be assigned by the Editorial Office.
+
+%------------------
+% moreauthors
+%------------------
+% If there is only one author the class option oneauthor should be used. Otherwise use the class option moreauthors.
+
+%---------
+% pdftex
+%---------
+% The option pdftex is for use with pdfLaTeX. If eps figures are used, remove the option pdftex and use LaTeX and dvi2pdf.
+
+%=================================================================
+% MDPI internal commands
+\firstpage{1} 
+\makeatletter 
+\setcounter{page}{\@firstpage} 
+\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2021}
+\copyrightyear{2020}
+%\externaleditor{Academic Editor: Firstname Lastname} % For journal Automation, please change Academic Editor to "Communicated by"
+\datereceived{} 
+\dateaccepted{} 
+\datepublished{} 
+\hreflink{https://doi.org/} % If needed use \linebreak
+%------------------------------------------------------------------
+% The following line should be uncommented if the LaTeX file is uploaded to arXiv.org
+%\pdfoutput=1
+
+%=================================================================
+% Add packages and commands here. The following packages are loaded in our class file: fontenc, inputenc, calc, indentfirst, fancyhdr, graphicx, epstopdf, lastpage, ifthen, lineno, float, amsmath, setspace, enumitem, mathpazo, booktabs, titlesec, etoolbox, tabto, xcolor, soul, multirow, microtype, tikz, totcount, changepage, paracol, attrib, upgreek, cleveref, amsthm, hyphenat, natbib, hyperref, footmisc, url, geometry, newfloat, caption
+
+%=================================================================
+%% Please use the following mathematics environments: Theorem, Lemma, Corollary, Proposition, Characterization, Property, Problem, Example, ExamplesandDefinitions, Hypothesis, Remark, Definition, Notation, Assumption
+%% For proofs, please use the proof environment (the amsthm package is loaded by the MDPI class).
+
+%=================================================================
+
+% Full title of the paper (Capitalized)
+\Title{Early evidence for the safety of certain COVID-19 vaccines using  empirical Bayesian modeling from VAERS}
+
+% MDPI internal command: Title for citation in the left column
+\TitleCitation{Early evidence for the safety of certain COVID-19 vaccines using  empirical Bayesian modeling from VAERS}
+
+% Author Orchid ID: enter ID or remove command
+\newcommand{\orcidauthorA}{0000-0003-3131-0864} % Add \orcidA{} behind the author's name
+
+% Authors, for the paper (add full first names)
+\Author{Chris von Csefalvay $^{1}$\orcidA{}}
+
+% MDPI internal command: Authors, for metadata in PDF
+\AuthorNames{Chris von Csefalvay}
+
+% MDPI internal command: Authors, for citation in the left column
+\AuthorCitation{von Csefalvay, C.}
+% If this is a Chicago style journal: Lastname, Firstname, Firstname Lastname, and Firstname Lastname.
+
+% Affiliations / Addresses (Add [1] after \address if there is only one affiliation.)
+\address{%
+$^{1}$ \quad Starschema Inc., Arlington, VA; csefalvayk@starschema.com}
+
+% Contact information of the corresponding author
+\corres{Correspondence: csefalvayk@starschema.com}
+
+% Abstract (Do not insert blank lines, i.e. \\) 
+\abstract{The advent of vaccines against SARS-CoV-2 ushered in an unprecedented global response to COVID-19, with the largest and most ambitious mass vaccination campaign in human history. The scale of this effort means that safety signals suggesting adverse effects may only be detectable using passive reporting. This paper examines reports to the CDC/FDA's VAERS system in the first six months of 2021, using an empirical Bayesian model with a gamma Poisson shrinker to identify potential safety signals from COVID-19 vaccines currently on the U.S. market. Based on this preliminary data, it is concluded that the COVID-19 vaccine's safety significantly exceeds that of previously marketed vaccines, and other than a known risk of thrombotic events, no safety signals of concern emerge.}
+
+% Keywords
+\keyword{COVID-19, vaccine safety, Bayesian analytics, Gamma Poisson shrinker} 
 \begin{document}
 
-\maketitle
 
-\begin{abstract}
-    The advent of vaccines against SARS-CoV-2 ushered in an unprecedented global response to COVID-19, with the largest and most ambitious mass vaccination campaign in human history. The scale of this effort means that safety signals suggesting adverse effects may only be detectable using passive reporting. This paper examines reports to the CDC/FDA's VAERS system in the first six months of 2021, using an empirical Bayesian model with a gamma Poisson shrinker to identify potential safety signals from COVID-19 vaccines currently on the U.S. market. Based on this preliminary data, it is concluded that the COVID-19 vaccine's safety significantly exceeds that of previously marketed vaccines, and other than a known risk of thrombotic events, no safety signals of concern emerge.
-\end{abstract}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{section}{-1} %% Remove this when starting to work on the template.
 \section{Introduction} % (fold)
 \label{sec:introduction}
 
-The introduction of vaccines against SARS-CoV-2 has lent the response to the COVID-19 a new string to its bow. In the world's largest mass vaccination campaign to date, \cite{bagcchi2021world,li2021comprehensive,mathieu2021global} over two million doses of SARS-CoV-2 vaccines have been administered by the end of May 2021 – over 300 million of these just in the United States. As with any medical intervention, it is indispensible for public confidence that any potential risks be identified and corrected early. Adverse events following immunisation (AEFIs) have been documented in the context of every known vaccine, and are mostly benign (such as pyrexia, transient non-specific malaise and injection site discomfort). In the context of the COVID-19 vaccines, identifying particular clinically significant safety signals is made more difficult by the scale of the pandemic. The logistics of active surveillance within a pandemic are daunting at best, limiting us primarily to deriving insights from passive surveillance.
+The introduction of vaccines against SARS-CoV-2 has lent the response to the COVID-19 a new string to its bow. In the world's largest mass vaccination campaign to date, \cite{bagcchi2021world,li2021comprehensive,mathieu2021global} over two million doses of SARS-CoV-2 vaccines have been administered by the end of May 2021 – over 300 million of these just in the United States. As with any medical intervention, it is indispensible for public confidence that any potential risks be identified and corrected early. Adverse events following immunisation (AEFIs) have been documented in the context of every known vaccine, and are mostly benign (such as pyrexia, transient non-specific malaise and injection site discomfort). In the context of the COVID-19 vaccines, identifying particular clinically significant safety signals is made more difficult by the scale of the pandemic. The logistics of active surveillance within a pandemic are daunting at best, limiting us primarily to deriving insightss from passive surveillance.
 
 In passive surveillance of AEFIs, persons who experience AEFIs volunteer information about their experience. In the United States, the leading system for this purpose is VAERS, jointly maintained by the CDC and the FDA. Passive surveillance, however, suffers from both over- and underreporting: while some patients do not report their AEFIs (especially if these are mild and transient), many who report various ailments do so regardless of a determination of causality. VAERS was intentionally designed to be 'over-inclusive': anyone can submit reports, and there is no requirement for evidence to claim a particular AEFI. Moreover, the structure of VAERS allows for a wide range of information to be included as 'symptoms', including tests carried out and tests with normal results. There is also an inherent awareness bias: patients with more severe AEFIs are more likely to make an effort to report their symptoms than those experiencing mild reactions, skewing the relative reporting rate to over-estimate the real occurrence of serious AEFIs.\cite{varricchio2004understanding} 
 
@@ -36,7 +115,7 @@ This paper focuses on the early evidence from the first six months of COVID-19 v
 
 % section introduction (end)
 
-\section{Methods} % (fold)
+\section{Materials and methods} % (fold)
 \label{sec:methods}
 
 \subsection{Data set} % (fold)
@@ -172,13 +251,29 @@ Based on reports between 01 January and 28 May 2021, the short to mid-term safet
 
 % section discussion (end)
 
-\section*{Competing interests} % (fold)
-\label{sec:competing_interests}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{6pt} 
 
-CvC is a consultant to a company that may be affected by the research reported in this paper. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% optional
+%\supplementary{The following are available online at \linksupplementary{s1}, Figure S1: title, Table S1: title, Video S1: title.}
 
-% section competing_interests (end)
+% Only for the journal Methods and Protocols:
+% If you wish to submit a video article, please do so with any other supplementary material.
+% \supplementary{The following are available at \linksupplementary{s1}, Figure S1: title, Table S1: title, Video S1: title. A supporting video article is available at doi: link.} 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\funding{This research was funded by Starschema Inc.}
+
+\conflictsofinterest{The author is a consultant to a company that may be affected by the research reported in this paper. Neither the funders nor the company had a role in the design of the study; in the collection, analyses, or interpretation of data; in the writing of the manuscript, or in the decision to publish the~results.} 
+
+
+%=====================================
+% References, variant A: external bibliography
+%=====================================
+\externalbibliography{yes}
 \bibliography{bibliography}
 
 \end{document}
+

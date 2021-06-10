@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{20}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -7,31 +7,40 @@
 
 \bibitem[Bagcchi(2021)]{bagcchi2021world}
 Sanjeet Bagcchi.
-\newblock The world's largest covid-19 vaccination campaign.
-\newblock \emph{The Lancet. Infectious Diseases}, 21\penalty0 (3):\penalty0
-  323, 2021.
+\newblock The world's largest {C}{O}{V}{I}{D}-19 vaccination campaign.
+\newblock \emph{The Lancet Infectious Diseases}, 21\penalty0 (3):\penalty0 323,
+  2021.
 
 \bibitem[Li et~al.(2021)Li, Tenchov, Smoot, Liu, Watkins, and
   Zhou]{li2021comprehensive}
 Yingzhu Li, Rumiana Tenchov, Jeffrey Smoot, Cynthia Liu, Steven Watkins, and
   Qiongqiong Zhou.
-\newblock A comprehensive review of the global efforts on covid-19 vaccine
-  development.
+\newblock A comprehensive review of the global efforts on {C}{O}{V}{I}{D}-19
+  vaccine development.
 \newblock \emph{ACS Central Science}, 7\penalty0 (4):\penalty0 512--533, 2021.
 
 \bibitem[Mathieu et~al.(2021)Mathieu, Ritchie, Ortiz-Ospina, Roser, Hasell,
   Appel, Giattino, and Rod{\'e}s-Guirao]{mathieu2021global}
 Edouard Mathieu, Hannah Ritchie, Esteban Ortiz-Ospina, Max Roser, Joe Hasell,
   Cameron Appel, Charlie Giattino, and Lucas Rod{\'e}s-Guirao.
-\newblock A global database of covid-19 vaccinations.
+\newblock A global database of {C}{O}{V}{I}{D}-19 vaccinations.
 \newblock \emph{Nature Human Behaviour}, pages 1--7, 2021.
+
+\bibitem[Varricchio et~al.(2004)Varricchio, Iskander, Destefano, Ball, Pless,
+  Braun, and Chen]{varricchio2004understanding}
+Frederick Varricchio, John Iskander, Frank Destefano, Robert Ball, Robert
+  Pless, M~Miles Braun, and Robert~T Chen.
+\newblock Understanding vaccine safety information from the vaccine adverse
+  event reporting system.
+\newblock \emph{The Pediatric infectious disease journal}, 23\penalty0
+  (4):\penalty0 287--294, 2004.
 
 \bibitem[Khubchandani et~al.(2021)Khubchandani, Sharma, Price, Wiblishauser,
   Sharma, and Webb]{khubchandani2021covid}
 Jagdish Khubchandani, Sushil Sharma, James~H Price, Michael~J Wiblishauser,
   Manoj Sharma, and Fern~J Webb.
-\newblock Covid-19 vaccination hesitancy in the united states: a rapid national
-  assessment.
+\newblock {C}{O}{V}{I}{D}-19 vaccination hesitancy in the {United} {States}: a
+  rapid national assessment.
 \newblock \emph{Journal of Community Health}, 46\penalty0 (2):\penalty0
   270--277, 2021.
 
@@ -40,8 +49,8 @@ Jagdish Khubchandani, Sushil Sharma, James~H Price, Michael~J Wiblishauser,
 Patrick Peretti-Watel, Val{\'e}rie Seror, S{\'e}bastien Cortaredona, Odile
   Launay, Jocelyn Raude, Pierrea Verger, Lisa Fressard, Fran{\c{c}}ois Beck,
   St{\'e}phane Legleye, Olivier l'Haridon, et~al.
-\newblock A future vaccination campaign against covid-19 at risk of vaccine
-  hesitancy and politicisation.
+\newblock A future vaccination campaign against {C}{O}{V}{I}{D}-19 at risk of
+  vaccine hesitancy and politicisation.
 \newblock \emph{The Lancet Infectious Diseases}, 20\penalty0 (7):\penalty0
   769--770, 2020.
 
@@ -51,6 +60,25 @@ Mohammad~S Razai, Umar~AR Chaudhry, Katja Doerholt, Linda Bauld, and Azeem
   Majeed.
 \newblock Covid-19 vaccination hesitancy.
 \newblock \emph{bmj}, 373, 2021.
+
+\bibitem[Loomba et~al.(2021)Loomba, de~Figueiredo, Piatek, de~Graaf, and
+  Larson]{loomba2021measuring}
+Sahil Loomba, Alexandre de~Figueiredo, Simon~J Piatek, Kristen de~Graaf, and
+  Heidi~J Larson.
+\newblock Measuring the impact of {C}{O}{V}{I}{D}-19 vaccine misinformation on
+  vaccination intent in the uk and usa.
+\newblock \emph{Nature Human Behaviour}, 5\penalty0 (3):\penalty0 337--348,
+  2021.
+
+\bibitem[Roozenbeek et~al.(2020)Roozenbeek, Schneider, Dryhurst, Kerr, Freeman,
+  Recchia, Van Der~Bles, and Van Der~Linden]{roozenbeek2020susceptibility}
+Jon Roozenbeek, Claudia~R Schneider, Sarah Dryhurst, John Kerr, Alexandra~LJ
+  Freeman, Gabriel Recchia, Anne~Marthe Van Der~Bles, and Sander Van
+  Der~Linden.
+\newblock Susceptibility to misinformation about {C}{O}{V}{I}{D}-19 around the
+  world.
+\newblock \emph{Royal Society open science}, 7\penalty0 (10):\penalty0 201199,
+  2020.
 
 \bibitem[{R Core Team}(2021)]{rstats}
 {R Core Team}.
@@ -64,8 +92,8 @@ Hadley Wickham.
 
 \bibitem[Evans et~al.(2001)Evans, Waller, and Davis]{evans2001use}
 Stephen~JW Evans, Patrick~C Waller, and S~Davis.
-\newblock Use of proportional reporting ratios (prrs) for signal generation
-  from spontaneous adverse drug reaction reports.
+\newblock Use of proportional reporting ratios ({P}{R}{R}s) for signal
+  generation from spontaneous adverse drug reaction reports.
 \newblock \emph{Pharmacoepidemiology and drug safety}, 10\penalty0
   (6):\penalty0 483--486, 2001.
 
@@ -89,8 +117,8 @@ William DuMouchel.
   Fram]{almenoff2003disproportionality}
 June~S Almenoff, William DuMouchel, L~Allen Kindman, Xionghu Yang, and David
   Fram.
-\newblock Disproportionality analysis using empirical bayes data mining: a tool
-  for the evaluation of drug interactions in the post-marketing setting.
+\newblock Disproportionality analysis using empirical {Bayes} data mining: a
+  tool for the evaluation of drug interactions in the post-marketing setting.
 \newblock \emph{Pharmacoepidemiology and Drug Safety}, 12\penalty0
   (6):\penalty0 517--521, 2003.
 
@@ -110,21 +138,21 @@ Hyesung Lee, Ju~Hwan Kim, Young~June Choe, and Ju-Young Shin.
 
 \bibitem[Canida and Ihrie(2017)]{canida2017openebgm}
 Travis Canida and John Ihrie.
-\newblock openebgm: An r implementation of the gamma-poisson shrinker data
-  mining model.
+\newblock {o}{p}{e}{n}{E}{B}{G}{M}: An {R} implementation of the
+  {G}amma-{P}oisson {S}hrinker data mining model.
 \newblock \emph{R J.}, 9\penalty0 (2):\penalty0 499, 2017.
 
 \bibitem[Shimabukuro(2021)]{shimabukuro2021covid}
 Tom~T Shimabukuro.
-\newblock Covid-19 vaccine safety update.
+\newblock {C}{O}{V}{I}{D}-19 vaccine safety update.
 \newblock 2021.
 
 \bibitem[Welsh et~al.(2021)Welsh, Baumblatt, Chege, Goud, and
   Nair]{welsh2021thrombocytopenia}
 Kerry~J Welsh, Jane Baumblatt, Wambui Chege, Ravi Goud, and Narayan Nair.
 \newblock Thrombocytopenia including immune thrombocytopenia after receipt of
-  mrna covid-19 vaccines reported to the vaccine adverse event reporting system
-  (vaers).
+  m{R}{N}{A} {C}{O}{V}{I}{D}-19 vaccines reported to the {Vaccine Adverse Event
+  Reporting System} ({V}{A}{E}{R}{S}).
 \newblock \emph{Vaccine}, 39\penalty0 (25):\penalty0 3329--3332, 2021.
 
 \end{thebibliography}

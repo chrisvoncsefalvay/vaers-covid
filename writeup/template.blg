@@ -1,42 +1,42 @@
 This is BibTeX, Version 0.99d (TeX Live 2018)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
-The top-level auxiliary file: writeup.aux
-The style file: unsrtnat.bst
+The top-level auxiliary file: template.aux
+The style file: Definitions/mdpi.bst
 Database file #1: bibliography.bib
 Warning--empty journal in shimabukuro2021covid
 You've used 20 entries,
-            2481 wiz_defined-function locations,
-            677 strings with 9221 characters,
-and the built_in function-call counts, 8655 in all, are:
-= -- 657
+            2862 wiz_defined-function locations,
+            684 strings with 8690 characters,
+and the built_in function-call counts, 8378 in all, are:
+= -- 638
 > -- 590
 < -- 8
 + -- 220
 - -- 180
-* -- 766
-:= -- 1444
-add.period$ -- 60
+* -- 805
+:= -- 1388
+add.period$ -- 59
 call.type$ -- 20
-change.case$ -- 39
+change.case$ -- 20
 chr.to.int$ -- 20
 cite$ -- 21
-duplicate$ -- 393
-empty$ -- 721
+duplicate$ -- 369
+empty$ -- 661
 format.name$ -- 202
-if$ -- 1771
+if$ -- 1692
 int.to.chr$ -- 1
-int.to.str$ -- 21
+int.to.str$ -- 20
 missing$ -- 19
-newline$ -- 108
+newline$ -- 102
 num.names$ -- 60
-pop$ -- 151
-preamble$ -- 1
+pop$ -- 133
+preamble$ -- 0
 purify$ -- 20
 quote$ -- 0
-skip$ -- 230
+skip$ -- 189
 stack$ -- 0
 substring$ -- 397
-swap$ -- 57
+swap$ -- 90
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
@@ -44,5 +44,5 @@ type$ -- 140
 warning$ -- 1
 while$ -- 70
 width$ -- 0
-write$ -- 265
+write$ -- 241
 (There was 1 warning)

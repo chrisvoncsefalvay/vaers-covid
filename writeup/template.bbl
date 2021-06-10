@@ -1,0 +1,141 @@
+\begin{thebibliography}{999}
+
+\bibitem[Bagcchi(2021)]{bagcchi2021world}
+Bagcchi, S.
+\newblock The world's largest {C}{O}{V}{I}{D}-19 vaccination campaign.
+\newblock {\em The Lancet Infectious Diseases} {\bf 2021}, {\em 21},~323.
+
+\bibitem[Li \em{et~al.}(2021)Li, Tenchov, Smoot, Liu, Watkins, and
+  Zhou]{li2021comprehensive}
+Li, Y.; Tenchov, R.; Smoot, J.; Liu, C.; Watkins, S.; Zhou, Q.
+\newblock A Comprehensive Review of the Global Efforts on {C}{O}{V}{I}{D}-19
+  Vaccine Development.
+\newblock {\em ACS Central Science} {\bf 2021}, {\em 7},~512--533.
+
+\bibitem[Mathieu \em{et~al.}(2021)Mathieu, Ritchie, Ortiz-Ospina, Roser,
+  Hasell, Appel, Giattino, and Rod{\'e}s-Guirao]{mathieu2021global}
+Mathieu, E.; Ritchie, H.; Ortiz-Ospina, E.; Roser, M.; Hasell, J.; Appel, C.;
+  Giattino, C.; Rod{\'e}s-Guirao, L.
+\newblock A global database of {C}{O}{V}{I}{D}-19 vaccinations.
+\newblock {\em Nature Human Behaviour} {\bf 2021}, pp. 1--7.
+
+\bibitem[Varricchio \em{et~al.}(2004)Varricchio, Iskander, Destefano, Ball,
+  Pless, Braun, and Chen]{varricchio2004understanding}
+Varricchio, F.; Iskander, J.; Destefano, F.; Ball, R.; Pless, R.; Braun, M.M.;
+  Chen, R.T.
+\newblock Understanding vaccine safety information from the vaccine adverse
+  event reporting system.
+\newblock {\em The Pediatric infectious disease journal} {\bf 2004}, {\em
+  23},~287--294.
+
+\bibitem[Khubchandani \em{et~al.}(2021)Khubchandani, Sharma, Price,
+  Wiblishauser, Sharma, and Webb]{khubchandani2021covid}
+Khubchandani, J.; Sharma, S.; Price, J.H.; Wiblishauser, M.J.; Sharma, M.;
+  Webb, F.J.
+\newblock {C}{O}{V}{I}{D}-19 vaccination hesitancy in the {United} {States}: a
+  rapid national assessment.
+\newblock {\em Journal of Community Health} {\bf 2021}, {\em 46},~270--277.
+
+\bibitem[Peretti-Watel \em{et~al.}(2020)Peretti-Watel, Seror, Cortaredona,
+  Launay, Raude, Verger, Fressard, Beck, Legleye, l'Haridon,
+  et~al.]{peretti2020future}
+Peretti-Watel, P.; Seror, V.; Cortaredona, S.; Launay, O.; Raude, J.; Verger,
+  P.; Fressard, L.; Beck, F.; Legleye, S.; l'Haridon, O.; others.
+\newblock A future vaccination campaign against {C}{O}{V}{I}{D}-19 at risk of
+  vaccine hesitancy and politicisation.
+\newblock {\em The Lancet Infectious Diseases} {\bf 2020}, {\em 20},~769--770.
+
+\bibitem[Razai \em{et~al.}(2021)Razai, Chaudhry, Doerholt, Bauld, and
+  Majeed]{razai2021covid}
+Razai, M.S.; Chaudhry, U.A.; Doerholt, K.; Bauld, L.; Majeed, A.
+\newblock Covid-19 vaccination hesitancy.
+\newblock {\em bmj} {\bf 2021}, {\em 373}.
+
+\bibitem[Loomba \em{et~al.}(2021)Loomba, de~Figueiredo, Piatek, de~Graaf, and
+  Larson]{loomba2021measuring}
+Loomba, S.; de~Figueiredo, A.; Piatek, S.J.; de~Graaf, K.; Larson, H.J.
+\newblock Measuring the impact of {C}{O}{V}{I}{D}-19 vaccine misinformation on
+  vaccination intent in the UK and USA.
+\newblock {\em Nature Human Behaviour} {\bf 2021}, {\em 5},~337--348.
+
+\bibitem[Roozenbeek \em{et~al.}(2020)Roozenbeek, Schneider, Dryhurst, Kerr,
+  Freeman, Recchia, Van Der~Bles, and Van
+  Der~Linden]{roozenbeek2020susceptibility}
+Roozenbeek, J.; Schneider, C.R.; Dryhurst, S.; Kerr, J.; Freeman, A.L.;
+  Recchia, G.; Van Der~Bles, A.M.; Van Der~Linden, S.
+\newblock Susceptibility to misinformation about {C}{O}{V}{I}{D}-19 around the
+  world.
+\newblock {\em Royal Society open science} {\bf 2020}, {\em 7},~201199.
+
+\bibitem[{R Core Team}(2021)]{rstats}
+{R Core Team}.
+\newblock {\em R: A Language and Environment for Statistical Computing}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria,  2021.
+
+\bibitem[Wickham(2012)]{wickham2012reshape2}
+Wickham, H.
+\newblock reshape2: Flexibly reshape data: a reboot of the reshape package.
+\newblock {\em R package version} {\bf 2012}, {\em 1}.
+
+\bibitem[Evans \em{et~al.}(2001)Evans, Waller, and Davis]{evans2001use}
+Evans, S.J.; Waller, P.C.; Davis, S.
+\newblock Use of proportional reporting ratios ({P}{R}{R}s) for signal
+  generation from spontaneous adverse drug reaction reports.
+\newblock {\em Pharmacoepidemiology and drug safety} {\bf 2001}, {\em
+  10},~483--486.
+
+\bibitem[Moore \em{et~al.}(2003)Moore, Hall, Sturkenboom, Mann, Lagnaoui, and
+  Begaud]{moore2003biases}
+Moore, N.; Hall, G.; Sturkenboom, M.; Mann, R.; Lagnaoui, R.; Begaud, B.
+\newblock Biases affecting the proportional reporting ratio (PRR) in
+  spontaneous reports pharmacovigilance databases: the example of sertindole.
+\newblock {\em Pharmacoepidemiology and drug safety} {\bf 2003}, {\em
+  12},~271--281.
+
+\bibitem[DuMouchel(1999)]{dumouchel1999bayesian}
+DuMouchel, W.
+\newblock Bayesian data mining in large frequency tables, with an application
+  to the FDA spontaneous reporting system.
+\newblock {\em The American Statistician} {\bf 1999}, {\em 53},~177--190.
+
+\bibitem[Almenoff \em{et~al.}(2003)Almenoff, DuMouchel, Kindman, Yang, and
+  Fram]{almenoff2003disproportionality}
+Almenoff, J.S.; DuMouchel, W.; Kindman, L.A.; Yang, X.; Fram, D.
+\newblock Disproportionality analysis using empirical {Bayes} data mining: a
+  tool for the evaluation of drug interactions in the post-marketing setting.
+\newblock {\em Pharmacoepidemiology and Drug Safety} {\bf 2003}, {\em
+  12},~517--521.
+
+\bibitem[Harpaz \em{et~al.}(2013)Harpaz, DuMouchel, LePendu, and
+  Shah]{harpaz2013empirical}
+Harpaz, R.; DuMouchel, W.; LePendu, P.; Shah, N.H.
+\newblock Empirical Bayes model to combine signals of adverse drug reactions.
+\newblock  Proceedings of the 19th ACM SIGKDD international conference on
+  Knowledge discovery and data mining,  2013, pp. 1339--1347.
+
+\bibitem[Lee \em{et~al.}(2020)Lee, Kim, Choe, and Shin]{lee2020safety}
+Lee, H.; Kim, J.H.; Choe, Y.J.; Shin, J.Y.
+\newblock Safety Surveillance of Pneumococcal Vaccine Using Three Algorithms:
+  Disproportionality Methods, Empirical Bayes Geometric Mean, and Tree-Based
+  Scan Statistic.
+\newblock {\em Vaccines} {\bf 2020}, {\em 8},~242.
+
+\bibitem[Canida and Ihrie(2017)]{canida2017openebgm}
+Canida, T.; Ihrie, J.
+\newblock {o}{p}{e}{n}{E}{B}{G}{M}: An {R} Implementation of the
+  {G}amma-{P}oisson {S}hrinker Data Mining Model.
+\newblock {\em R J.} {\bf 2017}, {\em 9},~499.
+
+\bibitem[Shimabukuro(2021)]{shimabukuro2021covid}
+Shimabukuro, T.T.
+\newblock {C}{O}{V}{I}{D}-19 vaccine safety update {\bf 2021}.
+
+\bibitem[Welsh \em{et~al.}(2021)Welsh, Baumblatt, Chege, Goud, and
+  Nair]{welsh2021thrombocytopenia}
+Welsh, K.J.; Baumblatt, J.; Chege, W.; Goud, R.; Nair, N.
+\newblock Thrombocytopenia including immune thrombocytopenia after receipt of
+  m{R}{N}{A} {C}{O}{V}{I}{D}-19 vaccines reported to the {Vaccine Adverse Event
+  Reporting System} ({V}{A}{E}{R}{S}).
+\newblock {\em Vaccine} {\bf 2021}, {\em 39},~3329--3332.
+
+\end{thebibliography}
