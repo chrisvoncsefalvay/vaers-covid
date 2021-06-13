@@ -1,8 +1,8 @@
 # COVID-19 VAERS analysis
 
-[![DOI](https://zenodo.org/badge/374491464.svg)](https://zenodo.org/badge/latestdoi/374491464)
+[![DOI](https://zenodo.org/badge/374491464.svg)](https://zenodo.org/badge/latestdoi/374491464) 
 
-Code and data for the paper (forthcoming) titled _Early evidence for the safety of certain COVID-19 vaccines using  empirical Bayesian modeling from VAERS_.
+Code and data for the paper _Early evidence for the safety of certain COVID-19 vaccines using  empirical Bayesian modeling from VAERS_.
 
 The preprint for this paper is now [available here on medRxiv](https://www.medrxiv.org/content/10.1101/2021.06.10.21258589v1).
 
